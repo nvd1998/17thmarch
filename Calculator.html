@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Merienda" rel="stylesheet">
+	<style type="text/css">
+	body{
+		background-image: linear-gradient(to right, #00BDFF, #B53CFF);
+		padding-top: 100px;
+	}
+		#btn{
+			border-radius: 5px;
+			width: 50px;
+			height: 50px;
+			margin: 5px;
+			font-weight: bolder;
+			font-size: 20px;
+		}
+		#btnx{
+			width: 240px;
+			height: 50px;
+			margin: 5px;
+			font-weight: bolder;
+			font-size: 20px;
+		}
+		#screen{
+			width: 240px;
+			height: 50px;
+			font-size: 15px;
+			margin: 5px;
+		}
+		#nen{
+			border-radius: 5px;
+			margin: 0 auto;
+			width: 280px;
+			height: auto;
+			background-color: #ededed;
+			text-align: center;
+			padding: 10px 0px 10px 0px;
+		}
+		#div2 {
+			text-align: center;
+			margin: 0 auto;
+			color: #ededed;
+		}
+		#div2 h1{
+			font-family: 'Merienda', cursive;
+			font-size: 50px;
+		}
+		#div2 p{
+			font-family: 'Bad Script', cursive;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="nen">
+	<div>
+		<form>
+			<input type="text" name="" value="" id="screen" class="manhinh">
+		</form>
+	</div>
+	<div>
+
+		<input type="button" name="" value="1" id="btn" onclick="insert(1)">
+		<input type="button" name="" value="2" id="btn" onclick="insert(2)">
+		<input type="button" name="" value="3" id="btn" onclick="insert(3)">
+		<input type="button" name="" value="+" id="btn" onclick="insert(this.value)">
+		<br>
+		<input type="button" name="" value="4" id="btn" onclick="insert(4)">
+		<input type="button" name="" value="5" id="btn" onclick="insert(5)">
+		<input type="button" name="" value="6" id="btn" onclick="insert(6)">
+		<input type="button" name="" value="-" id="btn" onclick="insert(this.value)">
+		<br>
+		<input type="button" name="" value="7" id="btn" onclick="insert(7)">
+		<input type="button" name="" value="8" id="btn" onclick="insert(8)">
+		<input type="button" name="" value="9" id="btn" onclick="insert(9)">
+		<input type="button" name="" value="*" id="btn" onclick="insert(this.value)">
+		<br>
+		<input type="button" name="" value="0" id="btn" onclick="insert(0)">
+		<input type="button" name="" value="C" id="btn" onclick="xoa()">
+		<input type="button" name="" value="=" id="btn" onclick="ketqua()">
+		<input type="button" name="" value="/" id="btn" onclick="insert(this.value)">
+		<input type="button" name="" value="<" id="btnx" onclick="_back()">
+	</div>
+	</div>
+	<div id="div2">
+		<h1>JS CALCULATOR</h1>
+		<p>Made by PHANTOM</p>
+	</div>
+	<script type="text/javascript">
+		function insert(num){
+			document.getElementById("screen").value = document.getElementById("screen").value + num;
+		}
+		
+		function ketqua(){
+			var kq = document.getElementById("screen").value;
+			document.getElementById("screen").value = eval(kq);
+		}
+		function xoa(){
+			document.getElementById("screen").value = "";
+		}
+		function _back(){
+			var a = document.getElementById("screen").value;
+			document.getElementById("screen").value = a.substr(0,a.length - 1);
+		}
+	</script>
+</body>
+</html>
+
