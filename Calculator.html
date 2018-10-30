@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Calculator</title>
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Merienda" rel="stylesheet">
 	<style type="text/css">
 	body{
@@ -9,25 +10,34 @@
 		padding-top: 100px;
 	}
 		#btn{
+			margin: 5px;
+			background-color: white;
+			border: none;
 			border-radius: 5px;
 			width: 50px;
 			height: 50px;
-			margin: 5px;
 			font-weight: bolder;
 			font-size: 20px;
 		}
 		#btnx{
-			width: 240px;
-			height: 50px;
 			margin: 5px;
+			background-color: white;
+			border-radius: 5px;
+			width: 100%;
+			border: none;
+			height: 50px;
 			font-weight: bolder;
 			font-size: 20px;
 		}
 		#screen{
-			width: 240px;
+			width: 100%;
 			height: 50px;
 			font-size: 15px;
-			margin: 5px;
+			border-radius: 5px;
+			border: 1px gray solid;
+		}
+		#bang{
+			margin: 0 auto;
 		}
 		#nen{
 			border-radius: 5px;
@@ -50,39 +60,66 @@
 		#div2 p{
 			font-family: 'Bad Script', cursive;
 		}
+		#btn:hover{
+			background-color: #ededed;
+		}
+		#btnx:hover{
+			background-color: #ededed;
+		}
+		@media screen and (max-width: 640px){
+			#nen{
+				width: 100%;
+			}
+			#btn{
+				width: 100%;
+			}
+			#btnx{
+				width: 100%;
+			}
+			#bang{
+				width: 100%;
+			}
+		}
 	</style>
 </head>
 
 <body>
 	<div id="nen">
-	<div>
-		<form>
-			<input type="text" name="" value="" id="screen" class="manhinh">
-		</form>
-	</div>
-	<div>
+		<table id="bang">
+			<tr>
+				<td colspan="4"><input type="text" name="" value="" id="screen"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" id="btn" onclick="insert(1)"></td>
+				<td><input type="button" value="2" id="btn" onclick="insert(2)"></td>
+				<td><input type="button" value="3" id="btn" onclick="insert(3)"></td>
+				<td><input type="button" value="+" id="btn" onclick="insert(this.value)"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" id="btn" onclick="insert(4)"></td>
+				<td><input type="button" value="5" id="btn" onclick="insert(5)"></td>
+				<td><input type="button" value="6" id="btn" onclick="insert(6)"></td>
+				<td><input type="button" value="-" id="btn" onclick="insert(this.value)"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" id="btn" onclick="insert(4)"></td>
+				<td><input type="button" value="5" id="btn" onclick="insert(5)"></td>
+				<td><input type="button" value="6" id="btn" onclick="insert(6)"></td>
+				<td><input type="button" value="*" id="btn" onclick="insert(this.value)"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0" id="btn" onclick="insert(0)"></td>
+				<td><input type="button" value="C" id="btn" onclick="xoa()"></td>
+				<td><input type="button" value="=" id="btn" onclick="ketqua()"></td>
+				<td><input type="button" value="/" id="btn" onclick="insert(this.value)"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="button" value="<" id="btnx" onclick="_back()"></td>
+			</tr>
+		</table>
 
-		<input type="button" name="" value="1" id="btn" onclick="insert(1)">
-		<input type="button" name="" value="2" id="btn" onclick="insert(2)">
-		<input type="button" name="" value="3" id="btn" onclick="insert(3)">
-		<input type="button" name="" value="+" id="btn" onclick="insert(this.value)">
-		<br>
-		<input type="button" name="" value="4" id="btn" onclick="insert(4)">
-		<input type="button" name="" value="5" id="btn" onclick="insert(5)">
-		<input type="button" name="" value="6" id="btn" onclick="insert(6)">
-		<input type="button" name="" value="-" id="btn" onclick="insert(this.value)">
-		<br>
-		<input type="button" name="" value="7" id="btn" onclick="insert(7)">
-		<input type="button" name="" value="8" id="btn" onclick="insert(8)">
-		<input type="button" name="" value="9" id="btn" onclick="insert(9)">
-		<input type="button" name="" value="*" id="btn" onclick="insert(this.value)">
-		<br>
-		<input type="button" name="" value="0" id="btn" onclick="insert(0)">
-		<input type="button" name="" value="C" id="btn" onclick="xoa()">
-		<input type="button" name="" value="=" id="btn" onclick="ketqua()">
-		<input type="button" name="" value="/" id="btn" onclick="insert(this.value)">
-		<input type="button" name="" value="<" id="btnx" onclick="_back()">
-	</div>
+
+		
 	</div>
 	<div id="div2">
 		<h1>JS CALCULATOR</h1>
